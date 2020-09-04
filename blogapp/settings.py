@@ -1,10 +1,8 @@
-
 import os 
-
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -12,12 +10,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'xlsxj!x0o)c9o#sbo_6r#7j7u8-vcgu#=0&-s=9iccb&_$f0hd'
+SECRET_KEY = os.getenv("KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG_STATUS")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sca-blogapp.herokuapp.com']
 
 
 # Application definition
@@ -121,4 +119,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 LOGIN_URL = 'login'
+
+#Security config
 
