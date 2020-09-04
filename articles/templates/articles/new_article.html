@@ -1,0 +1,29 @@
+
+{% extends "articles/base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="row">
+
+    <!-- Articles Entries Column -->
+    <div class="col-md-8">
+
+      <h1 class="my-4">GirlsInTech
+        <small>Create an Article</small>
+      </h1>
+      <form class="site-form" action="{% url 'articles:CreateArticle' %}" method = "POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{form.as_p}}
+          <button type = "submit" class = "btn btn-primary">Submit</button>
+      </form>
+
+      <!-- Article Post -->
+      
+      </div>
+    </div>
+
+{% endblock %}
+
+
